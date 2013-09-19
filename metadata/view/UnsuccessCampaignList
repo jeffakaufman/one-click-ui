@@ -1,0 +1,49 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "margin": null,
+        "width": null,
+        "designer|userClassName": "UnsuccessCampaignList",
+        "designer|userAlias": "unsuccesscampaignlist",
+        "scrollable": false,
+        "itemCls": "campaign",
+        "store": "CampaignsStore"
+    },
+    "designerId": "2de18d3b-aa97-46a0-a9fc-de64a60db684",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<div class=\"campaignDiv\" >    \r",
+                    "    <div class=\"campaignDiv-right\">\r",
+                    "        <div style=\"float:right; width:20px\">\r",
+                    "            >\r",
+                    "        </div>\r",
+                    "        <div style=\"width:80px; text-align:right;\">\r",
+                    "            ({fblikes}) &nbsp;&nbsp;\r",
+                    "        </div>\r",
+                    "        <div style=\"clear:both;\"></div>\r",
+                    "    </div>\r",
+                    "    <div class=\"campaignDiv-unsuccess-left\">&nbsp;&nbsp;{name}</div>\r",
+                    "    \r",
+                    "    <div style=\"clear:both;\"></div>\r",
+                    "</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "7c3c7300-b2bb-42d2-a5c3-d512b7388d92"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "margin": null,
+        "width": null,
+        "designer|userClassName": "SuccessCampaignList",
+        "designer|userAlias": "successcampaignlist",
+        "scrollable": false,
+        "itemCls": "campaign",
+        "store": "CampaignsStore"
+    },
+    "designerId": "aa0d5d83-7686-4126-b6f4-9a6f76f55b06",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<div class=\"campaignDiv\" >    \r",
+                    "    <div class=\"campaignDiv-right\">\r",
+                    "        <div style=\"float:right; width:20px\">\r",
+                    "            >\r",
+                    "        </div>\r",
+                    "        <div style=\"width:80px; text-align:right;\">\r",
+                    "            ({fblikes}) &nbsp;&nbsp;\r",
+                    "        </div>\r",
+                    "        <div style=\"clear:both;\"></div>\r",
+                    "    </div>\r",
+                    "    <div class=\"campaignDiv-success-left\">&nbsp;&nbsp;{name}</div>\r",
+                    "    \r",
+                    "    <div style=\"clear:both;\"></div>\r",
+                    "</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "0c8d403c-e19e-47cc-8b6c-06c5f1288555"
+        }
+    ]
+}

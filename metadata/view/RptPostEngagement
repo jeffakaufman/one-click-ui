@@ -1,0 +1,83 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RptPostEngagement",
+        "designer|userAlias": "rptpostengagement",
+        "scrollable": false,
+        "itemCls": "report",
+        "store": "PostEngagementStore"
+    },
+    "designerId": "4e66d5c6-66d0-4dd8-a723-be4fb4c6f004",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<tpl if=\"id == 0\">\r",
+                    "    <div >    \r",
+                    "            <div style=\"float:left; width:32%;font-size: 0.7em;height: 25px;\">\r",
+                    "                &nbsp;\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:34%;font-size: 0.9em;border-left: 2px solid #dedede;border-bottom: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                I\r",
+                    "            </div>            \r",
+                    "            <div style=\"float:left; width:34%;font-size: 0.9em;border-left: 2px solid #dedede;border-bottom: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                Competitor\r",
+                    "            </div>\r",
+                    "            <div style=\"clear:both;\"></div>\r",
+                    "        </div>\r",
+                    "        <div >    \r",
+                    "            <div style=\"float:left; width:32%;font-size: 0.7em;height: 25px;\">\r",
+                    "                &nbsp;\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.6em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                Likes\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.6em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                Comments\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.6em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                Likes\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.6em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">\r",
+                    "                Comments\r",
+                    "            </div>\r",
+                    "            <div style=\"clear:both;\"></div>\r",
+                    "        </div>\r",
+                    "    <tpl else>\r",
+                    "        <div >    \r",
+                    "            <div style=\"float:left; width:32%;font-size: 0.7em; line-height:25px;height:25px;\">\r",
+                    "                {timeaxis}\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:25px;height:25px;\">\r",
+                    "                {mylikes}\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:25px;height:25px;\">\r",
+                    "                {mycomments}\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:25px;height:25px;\">\r",
+                    "                {cmplikes}\r",
+                    "            </div>\r",
+                    "            <div style=\"float:left; width:17%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:25px;height:25px;\">\r",
+                    "                {cmpcomments}\r",
+                    "            </div>\r",
+                    "            <div style=\"clear:both;\"></div>\r",
+                    "        </div>\r",
+                    "</tpl>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "19eb673c-d36d-4c0d-8260-1d6cacd852eb"
+        }
+    ]
+}

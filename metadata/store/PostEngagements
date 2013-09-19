@@ -1,0 +1,43 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "PercentChange",
+        "storeId": "PostEngagementStore",
+        "designer|userClassName": "PostEngagements",
+        "designer|userAlias": "postengagements"
+    },
+    "designerId": "d4fe1533-7184-473d-af87-1270cf093b8e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "dummy_postengagements.js"
+            },
+            "designerId": "a68036d1-b8b4-4824-95f9-e40654fb6b82",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "postengagements"
+                    },
+                    "designerId": "eef3d219-e192-4501-a2f6-07a223dde3f7"
+                }
+            ]
+        }
+    ]
+}

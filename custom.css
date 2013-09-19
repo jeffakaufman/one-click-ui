@@ -1,0 +1,60 @@
+.x-item-pressed
+{
+    background-color: #cccccc;
+    color: white !important;
+}
+
+.campaign{
+	border: 4px solid #dedede;
+    border-bottom: 0;
+    height : 47px;
+}
+
+.campaign:last-child{
+	border: 4px solid #dedede;    
+}
+
+.campaignDiv{
+	line-height:47px;
+    height : 47px;
+}
+
+.campaignDiv-right{
+	float:right;
+    width:100px;
+}
+
+.campaignDiv-unsuccess-left{
+    border-left:8px solid #ef3122;
+    margin-left: 2px;
+}
+    
+.campaignDiv-success-left{
+    border-left:8px solid #66bc45; 
+    margin-left: 2px;
+}
+
+.campaignDiv-active-left{
+    border-left:8px solid #3b59a7; 
+    margin-left: 2px;
+}
+
+.campaignDiv-inactive-left{
+    border-left:8px solid #ab7942; 
+    margin-left: 2px;
+}
+
+
+
+.campaign-arrow-right{
+    
+}
+
+.report{
+	border: 2px solid #dedede;
+    border-bottom: 0;    
+}
+
+.report:last-child{
+	border: 2px solid #dedede;    
+}

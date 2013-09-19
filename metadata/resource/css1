@@ -1,0 +1,14 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css1",
+        "url": "Ux.layout.Accordion.css",
+        "id": "Accordion"
+    },
+    "designerId": "d539ce0f-f23d-4293-98cb-18e0a441626d"
+}

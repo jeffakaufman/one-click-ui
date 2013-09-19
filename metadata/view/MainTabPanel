@@ -1,0 +1,84 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "ui": "light",
+        "designer|userClassName": "MainTabPanel",
+        "designer|userAlias": "maintabpanel"
+    },
+    "designerId": "b7a3bf91-a4cf-41b7-ac23-4251b38a4545",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Home",
+                "badgeText": null,
+                "iconCls": "home"
+            },
+            "designerId": "429e62d1-8c49-4618-8878-b9016af17741",
+            "masterInstanceId": "fdb7cade-ecfe-41d4-83f5-f5dfb25bb7a2"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Report",
+                "iconCls": "compose"
+            },
+            "designerId": "ef30304b-b3ea-4cf6-aabe-dfaa9b5c9d05",
+            "masterInstanceId": "29e3b71a-0bc7-433c-a016-fc6cc5aca323"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Profile Settings",
+                "iconCls": "user"
+            },
+            "designerId": "ad68a16b-a5cd-4a26-a673-636407142e37",
+            "masterInstanceId": "36bf4e63-ac1e-4847-9930-e116ee506899"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": "Search",
+                "iconCls": "search"
+            },
+            "designerId": "bf97513d-a094-4b69-bd62-84dea4c8fda9"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "designerId": "4c6eb361-e1af-4fbf-b2bc-ab36d3136c0c"
+        }
+    ]
+}

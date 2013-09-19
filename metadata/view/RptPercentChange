@@ -1,0 +1,83 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RptPercentChange",
+        "designer|userAlias": "rptpercentchange",
+        "scrollable": false,
+        "itemCls": "report",
+        "store": "PercentChangesStore"
+    },
+    "designerId": "cabe21ea-0321-4afc-bb0b-654525bbf24c",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<tpl if=\"id == 0\">",
+                    "    <div >    ",
+                    "            <div style=\"float:left; width:28%;font-size: 0.7em;height: 25px;\">",
+                    "                &nbsp;",
+                    "            </div>",
+                    "            <div style=\"float:left; width:36%;font-size: 0.9em;border-left: 2px solid #dedede;border-bottom: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                I",
+                    "            </div>            ",
+                    "            <div style=\"float:left; width:36%;font-size: 0.9em;border-left: 2px solid #dedede;border-bottom: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Competitor",
+                    "            </div>",
+                    "            <div style=\"clear:both;\"></div>",
+                    "        </div>",
+                    "        <div >    ",
+                    "            <div style=\"float:left; width:28%;font-size: 0.7em;height: 25px;\">",
+                    "                &nbsp;",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Likes",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Comments",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Likes",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Comments",
+                    "            </div>",
+                    "            <div style=\"clear:both;\"></div>",
+                    "        </div>",
+                    "    <tpl else>",
+                    "        <div >    ",
+                    "            <div style=\"float:left; width:28%;font-size: 0.7em; line-height:25px;height:50px;\">",
+                    "                {timeaxis}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:50px;height:50px;\">",
+                    "                {mylikes}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:50px;height:50px;\">",
+                    "                {mycomments}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:50px;height:50px;\">",
+                    "                {cmplikes}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:18%;font-size: 0.9em;border-left: 2px solid #dedede; text-align:right;line-height:50px;height:50px;\">",
+                    "                {cmpcomments}",
+                    "            </div>",
+                    "            <div style=\"clear:both;\"></div>",
+                    "        </div>",
+                    "</tpl>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "0afec06a-c983-4255-ac40-486db23d3e5d"
+        }
+    ]
+}

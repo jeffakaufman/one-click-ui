@@ -1,0 +1,54 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "PercentChange"
+        ],
+        "stores": [
+            "PercentChanges",
+            "PostEngagements"
+        ],
+        "views": [
+            "UnsuccessCampaignList",
+            "ActiveCampaignList",
+            "SuccessCampaignList",
+            "InactiveCampaignList",
+            "ProfileContainer",
+            "LoginContainer",
+            "HomeContainer",
+            "MainTabPanel",
+            "MainContainer",
+            "CampaignListContainer",
+            "CampaignDetailContainer",
+            "ReportingContainer",
+            "RptPercentChange",
+            "RptPostEngagement",
+            "ReportContainer",
+            "ReportHome"
+        ],
+        "requires": [
+            "OneClick.Accordion"
+        ],
+        "controllers": [
+            "AppController"
+        ],
+        "name": "OneClick"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "c589adad-587e-41f5-9c22-5b1c146f5b44"
+        }
+    ]
+}

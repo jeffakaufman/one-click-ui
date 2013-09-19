@@ -1,0 +1,75 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PercentChange",
+        "designer|userAlias": "percentchange"
+    },
+    "designerId": "8995877e-a070-4509-a3c4-29ebdabbf26d",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "timeaxis"
+            },
+            "designerId": "f67cd2e1-3a6b-4d59-831a-c9bfe7252b9d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mylikes"
+            },
+            "designerId": "1c78e07f-088a-426f-8c68-d16d310f029b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mycomments"
+            },
+            "designerId": "f112fd94-bad7-45bf-b8fe-c13cffa72962"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cmplikes"
+            },
+            "designerId": "0d57952c-1124-4811-a4b4-eba1f110635b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cmpcomments"
+            },
+            "designerId": "4196a075-660e-4f6e-a1fa-b2a0750e51c9"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "margin": null,
+        "designer|userClassName": "HomeContainer",
+        "designer|userAlias": "homecontainer",
+        "layout": "card",
+        "scrollable": false
+    },
+    "designerId": "fdb7cade-ecfe-41d4-83f5-f5dfb25bb7a2",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "fe443bab-fa42-43a2-8c4e-bc789aebf8d2",
+            "masterInstanceId": "7733424d-6377-46c8-af2b-fada9185482b"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "e212c15d-b245-497a-9022-16077a2535c5",
+            "masterInstanceId": "a8e1c932-0121-40f5-8bc1-5a7ac83f0a46"
+        }
+    ]
+}

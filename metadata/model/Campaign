@@ -1,0 +1,147 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Campaign",
+        "designer|userAlias": "campaign"
+    },
+    "designerId": "45499f9a-82b6-4c10-8a2d-c13c357b5a79",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "0f371b15-cff8-4971-8b07-1ae41ae8a399"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "description"
+            },
+            "designerId": "56801323-f4d9-4048-9bea-90bc3c9b7c48"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "image"
+            },
+            "designerId": "0ca8b4f3-ce23-44b7-80dd-4fa1ea64db33"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "status"
+            },
+            "designerId": "13a97a25-03d4-414d-aede-a759dd49d935"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userengagement"
+            },
+            "designerId": "0335beb7-ecf8-405e-ba17-c4d64f48537f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "startdate"
+            },
+            "designerId": "86cffcb2-c518-4dbb-bc81-ee48aa8d1229"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "enddate"
+            },
+            "designerId": "65d6844c-9284-412d-8dfe-568f89d71f74"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "budget"
+            },
+            "designerId": "e8815fca-f85a-47d3-b839-9754f9d2d299"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fblikes"
+            },
+            "designerId": "531aa99d-aed8-4e57-aa31-cb57fcb9594d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fbposts"
+            },
+            "designerId": "da38c8bd-7be1-4aa7-b6de-25ac0afa7b12"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fbpage"
+            },
+            "designerId": "f9f48650-d30b-4616-8f6f-80eee01cc3b2"
+        }
+    ]
+}

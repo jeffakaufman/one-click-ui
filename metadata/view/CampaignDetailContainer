@@ -1,0 +1,250 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CampaignDetailContainer",
+        "designer|userAlias": "campaigndetailcontainer",
+        "defaults": null,
+        "scrollable": true
+    },
+    "designerId": "a8e1c932-0121-40f5-8bc1-5a7ac83f0a46",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "itemId": "headerBar",
+                "title": ""
+            },
+            "designerId": "3716260d-8bfd-4a9d-9f5c-6772c35d44bc",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnBack",
+                        "ui": "back",
+                        "text": "Back"
+                    },
+                    "designerId": "04499623-c5cc-4843-84d6-92a065882f03"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10em",
+                "itemId": "summaryView",
+                "margin": "0.5em 0.5em"
+            },
+            "designerId": "682dd827-d9b7-4fbb-85c8-ee82f5ff00bc",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "implHandler": [
+                            "<div>\r",
+                            "    <div style=\"text-align:center;height:2em;\">Campaign: {name}</div>\r",
+                            "    <div style=\"height:8em;\">\r",
+                            "        <div style=\"width:30%; height:8em; float:left; text-align:center;\">\r",
+                            "            <tpl if=\"image\">\r",
+                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"{image}\" width=\"auto\">                \r",
+                            "            <tpl else>\r",
+                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"images/nophoto.jpg\" width=\"auto\">\r",
+                            "            </tpl>\r",
+                            "        </div>\r",
+                            "        <div style=\"width:65%; height:8em; float:left;\">\r",
+                            "\t\t\t<tpl if=\"status==1\">\r",
+                            "                <div style=\"font-size: 0.7em; color:#3E59A7; margin: 0 0.5em;\">&nbsp;<b>Active.</b> Launched {startdate}</div>\r",
+                            "            <tpl else>\r",
+                            "                <div style=\"font-size: 0.7em; color:#AB7942; margin: 0 0.5em;\">&nbsp;<b>Inactive.</b> </div>\r",
+                            "            </tpl>\r",
+                            "\t\t\t<div style=\"margin: 0.5em;\">{description}</div>\r",
+                            "            <div style=\"margin: 0 0.5em; font-size:0.8em;\">\r",
+                            "                <img style=\"height:1em;\" src=\"images/Facebook_like_thumb.png\" width=\"auto\"> {fblikes}\r",
+                            "                <img style=\"height:1em; margin: 0 0 0 3em; \" src=\"images/Facebook_post.png\" width=\"auto\"> {fbposts}\r",
+                            "\t\t\t</div>\r",
+                            "        </div>\r",
+                            "        <div style=\"clear:both;\"></div>\r",
+                            "        \r",
+                            "    </div>\r",
+                            "</div>"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "90740321-5312-4202-8fb9-ff3f245d8e70"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": "0 0.5em 0.5em",
+                "label": "User Engagement",
+                "labelWidth": "50%"
+            },
+            "designerId": "84970ee1-d6c8-4701-bb6d-fecdce4165bc"
+        },
+        {
+            "type": "Ext.field.DatePicker",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": "0 0.5em 0.5em",
+                "label": "Field",
+                "labelWidth": "50%",
+                "placeHolder": "mm/dd/yyyy"
+            },
+            "designerId": "81df70e0-9d3d-490a-9541-c0e2aeef8ccb",
+            "cn": [
+                {
+                    "type": "Ext.picker.Date",
+                    "reference": {
+                        "name": "picker",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "7adb87f7-9bbb-4af9-92e8-40a166f2ca68",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "doneButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Done"
+                            },
+                            "designerId": "ffb664c6-531e-4368-bf37-f4bf352e81b5"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "cancelButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Cancel"
+                            },
+                            "designerId": "fb6564b2-e385-466f-b9e0-6042db1afb2d"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.DatePicker",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": "0 0.5em 0.5em",
+                "label": "Field",
+                "labelWidth": "50%",
+                "placeHolder": "mm/dd/yyyy"
+            },
+            "designerId": "1840076e-58f7-46bd-9315-70c6b2452f5e",
+            "cn": [
+                {
+                    "type": "Ext.picker.Date",
+                    "reference": {
+                        "name": "picker",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "c2c8b6de-e5d5-4fa7-9481-f7ba693dee8c",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "doneButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Done"
+                            },
+                            "designerId": "67283c2f-ea5d-49f8-881d-24e9566a397f"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "cancelButton",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Cancel"
+                            },
+                            "designerId": "9c77a104-f25a-45f4-bb06-cf9f9f6f6795"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": "0 0.5em 0.5em",
+                "label": "Budget",
+                "labelWidth": "50%"
+            },
+            "designerId": "dd22bf90-0176-492f-9311-e1c7f0b1c6f4"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "btnLaunch",
+                "margin": "0 0.5em",
+                "ui": "action",
+                "text": "Launch Campaign"
+            },
+            "designerId": "dc131867-3c94-4219-a5fc-a3669f159ba9"
+        }
+    ]
+}

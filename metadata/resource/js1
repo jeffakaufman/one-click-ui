@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js1",
+        "url": "app/Accordion.js",
+        "id": "Accordion"
+    },
+    "designerId": "4b9ec70c-a164-482a-b758-1f97c5199b0b"
+}

@@ -1,0 +1,88 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportingContainer",
+        "designer|userAlias": "reportingcontainer",
+        "layout": "vbox",
+        "scrollable": false
+    },
+    "designerId": "38b3af17-76b0-4f6a-9ec2-5ee2c900d7a2",
+    "cn": [
+        {
+            "type": "Ext.SegmentedButton",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "start",
+                "container|pack": "center",
+                "itemId": "btnChooseReport",
+                "margin": "0.5em 0",
+                "width": "100%"
+            },
+            "designerId": "2cdc2431-068b-4155-9c8b-42ac260c3ed8",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "pressed": true,
+                        "ui": "small",
+                        "text": "% Change"
+                    },
+                    "designerId": "27ee0149-ffbd-46ec-b28b-6935bb752f51"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ui": "small",
+                        "text": "Score"
+                    },
+                    "designerId": "3071a19e-1a4b-4d1d-8437-e561705e8446"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ui": "small",
+                        "text": "Post Engagment"
+                    },
+                    "designerId": "36d0924e-e176-4ee6-b010-f489085141f2"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1
+            },
+            "designerId": "ae9fbd51-cd8a-4c36-8004-2a18b65a29b3",
+            "masterInstanceId": "5718647a-7e38-4241-99e0-e40d9754fc6b"
+        }
+    ]
+}

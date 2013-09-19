@@ -1,0 +1,43 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Campaign",
+        "storeId": "CampaignsStore",
+        "designer|userClassName": "Campaigns",
+        "designer|userAlias": "campaigns"
+    },
+    "designerId": "b0626890-5fd4-47da-ad7b-724c86a0a616",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "dummy_campaigns.js"
+            },
+            "designerId": "28b41b8b-6486-48bc-9a6d-b3e5ac0cd042",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "campaigns"
+                    },
+                    "designerId": "c2f10846-5381-42b4-a7c2-3d5ccf198640"
+                }
+            ]
+        }
+    ]
+}

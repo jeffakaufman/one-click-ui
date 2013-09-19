@@ -1,0 +1,38 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemId": "reportContainer",
+        "margin": "0.5em",
+        "designer|userClassName": "ReportContainer",
+        "designer|userAlias": "reportcontainer",
+        "layout": "card"
+    },
+    "designerId": "5718647a-7e38-4241-99e0-e40d9754fc6b",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "8b7edf2c-5cfd-4da3-bc9b-f6ff72b726eb",
+            "masterInstanceId": "cabe21ea-0321-4afc-bb0b-654525bbf24c"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "69f5604d-6716-4609-861e-2c7d18fe1dd5",
+            "masterInstanceId": "4e66d5c6-66d0-4dd8-a723-be4fb4c6f004"
+        }
+    ]
+}

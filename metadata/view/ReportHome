@@ -1,0 +1,29 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ReportHome",
+        "designer|userAlias": "reporthome",
+        "layout": "fit"
+    },
+    "designerId": "29e3b71a-0bc7-433c-a016-fc6cc5aca323",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Campaigns"
+            },
+            "designerId": "31bf510f-f0dc-4309-b152-0100abda79d6"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "start",
+        "ui": "",
+        "designer|userClassName": "LoginContainer",
+        "designer|userAlias": "logincontainer",
+        "layout": "vbox"
+    },
+    "designerId": "f6029c8c-7587-4783-b9ee-9041c49ea2aa",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "margin": null,
+                "title": "LOG IN"
+            },
+            "designerId": "616ff0d4-34bd-4812-a08a-100091c00ff9",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": null,
+                        "placeHolder": "User ID"
+                    },
+                    "designerId": "5c3718e0-2b6b-4f57-b5cc-a353c8cf08fb"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": null,
+                        "placeHolder": "Password"
+                    },
+                    "designerId": "5b9b8f4f-efba-40aa-8d6a-f49da6dea84a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "itemId": "btnLogin",
+                "margin": "0 0.5em 1.5em",
+                "ui": "action",
+                "text": "LOG IN"
+            },
+            "designerId": "35b44db8-0997-455f-a186-b408a02e6721"
+        }
+    ]
+}
