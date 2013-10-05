@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "start",
+        "container|align": "center",
         "ui": "",
         "designer|userClassName": "LoginContainer",
         "designer|userAlias": "logincontainer",
@@ -15,46 +15,18 @@
     "designerId": "f6029c8c-7587-4783-b9ee-9041c49ea2aa",
     "cn": [
         {
-            "type": "Ext.form.FieldSet",
+            "type": "Ext.Label",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "top",
-                "margin": null,
-                "title": "LOG IN"
+                "html": "<center>OneClick</center>",
+                "margin": "5em 0 10em",
+                "width": "100%"
             },
-            "designerId": "616ff0d4-34bd-4812-a08a-100091c00ff9",
-            "cn": [
-                {
-                    "type": "Ext.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "label": null,
-                        "placeHolder": "User ID"
-                    },
-                    "designerId": "5c3718e0-2b6b-4f57-b5cc-a353c8cf08fb"
-                },
-                {
-                    "type": "Ext.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "label": null,
-                        "placeHolder": "Password"
-                    },
-                    "designerId": "5b9b8f4f-efba-40aa-8d6a-f49da6dea84a"
-                }
-            ]
+            "designerId": "31904082-30e1-4af0-ae59-f3ce7909dad8"
         },
         {
             "type": "Ext.Button",
@@ -64,11 +36,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": "top",
+                "layout|flex": null,
+                "docked": null,
                 "itemId": "btnLogin",
-                "margin": "0 0.5em 1.5em",
+                "margin": null,
                 "ui": "action",
-                "text": "LOG IN"
+                "width": "90%",
+                "text": "FACEBOOK LOG IN"
             },
             "designerId": "35b44db8-0997-455f-a186-b408a02e6721"
         }

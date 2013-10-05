@@ -20,10 +20,28 @@
             },
             "codeClass": null,
             "userConfig": {
+                "container|pack": "end",
                 "docked": "top",
                 "title": "Campaigns"
             },
-            "designerId": "31bf510f-f0dc-4309-b152-0100abda79d6"
+            "designerId": "e19d453c-bb9f-41ee-a9fd-3ceb849e2e99",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnNavigation",
+                        "iconAlign": "right",
+                        "iconCls": "bookmarks",
+                        "text": null
+                    },
+                    "designerId": "4e7a739f-5c3d-4728-a341-374307bef283"
+                }
+            ]
         }
     ]
 }

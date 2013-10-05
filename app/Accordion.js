@@ -68,6 +68,7 @@ Ext.define('OneClick.Accordion', {
         var items = container.getInnerItems();
 
         // Make sure at least one item is expanded
+
         if (items.length > 0 && !this.getExpandedItem()) {
             this.expand(items[0]);
         }
@@ -183,6 +184,7 @@ Ext.define('OneClick.Accordion', {
             if (component.innerItems[0]) {
                 component.innerItems[0].element.removeCls('x-unsized');
             }
+            component.removeAll(true);
         }
     },
 
@@ -207,7 +209,14 @@ Ext.define('OneClick.Accordion', {
                 rmAnim = true;
             }
 
-            component.setHeight(component.fullHeight);
+           var w = Ext.getCmp('maintabpanel');
+            w.setMasked({
+                xtype: 'loadmask',
+                message: 'Loading...'
+            });
+            getCampaignDetail(component.config.recID);      
+            w.setMasked(false);         
+            component.setHeight(150 + (percentChanges.length + 1) * 52);
             component.collapsed = false;
 
             if (rmAnim) {
@@ -218,6 +227,11 @@ Ext.define('OneClick.Accordion', {
             if (component.innerItems[0]) {
                 component.innerItems[0].element.addCls('x-unsized');
             }
+            
+            component.add({
+                    xtype : 'reportingcontainer',                
+                    height: 100 + (percentChanges.length + 1) * 52
+            });
 
             // There was collapsing so it needs to wait until the collapsing animation is done before calculating heights
             // The delay must be > 300 (animation timing in CSS for collapsing)

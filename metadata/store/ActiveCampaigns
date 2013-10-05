@@ -1,0 +1,14 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Campaign",
+        "storeId": "ActiveCampaignStore",
+        "designer|userClassName": "ActiveCampaigns"
+    },
+    "designerId": "e930c25c-ac84-45d0-879c-392e87e2ac6c"
+}

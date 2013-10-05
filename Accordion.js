@@ -93,14 +93,18 @@ Ext.define('OneClick.Accordion', {
                 xtype  : 'titlebar',
 				ui: 'light',
                 docked : 'top',
-                title  : me.container.items.items[index].config.title,
                 items  : [
-                {
-                    ui      : 'plain',
-                    align   : 'right',
-					text	: me.container.items.items[index].config.timestamp
-                    
-                },
+                    {
+                        ui      : 'plain',
+                        align   : 'right',
+                        text    : me.container.items.items[index].config.title                        
+                    },
+                    {
+                        ui      : 'plain',
+                        align   : 'right',
+    					text	: me.container.items.items[index].config.timestamp
+                        
+                    },
                     {
                         cls     : me.itemArrowCls,
                         ui      : 'plain',

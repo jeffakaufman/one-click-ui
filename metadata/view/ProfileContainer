@@ -34,11 +34,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "itemId": "btnNavigation",
                         "iconAlign": "right",
                         "iconCls": "bookmarks",
                         "text": null
                     },
-                    "designerId": "7ceb942b-a9b2-414c-a8f8-8123a20455a0"
+                    "designerId": "05cfab93-4f17-4db3-b666-db5d2d885479"
                 }
             ]
         },
@@ -50,6 +51,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "itemId": "settings",
                 "title": "Settings"
             },
             "designerId": "1805adcc-0f77-4ccf-b170-597189efa890",
@@ -62,7 +64,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Name"
+                        "itemId": "name",
+                        "label": "Name",
+                        "name": "name",
+                        "readOnly": true
                     },
                     "designerId": "81580650-c72a-4d93-8b89-aba237e9c019"
                 },
@@ -74,7 +79,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Email"
+                        "itemId": "email",
+                        "label": "Email",
+                        "name": "email",
+                        "readOnly": true
                     },
                     "designerId": "3373bed7-01c2-4bda-afcd-2aa54868e38f"
                 },
@@ -86,25 +94,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "label": "Mobile"
+                        "itemId": "mobile",
+                        "label": "Mobile",
+                        "name": "mobile",
+                        "readOnly": true
                     },
                     "designerId": "a01988d1-c902-4ac8-82fe-62c01b502893"
                 }
             ]
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "margin": "0 0.5em 1.5em",
-                "ui": "confirm",
-                "text": "Save"
-            },
-            "designerId": "4aea7d7a-59cc-4701-b1ad-df3b508ef21f"
         },
         {
             "type": "Ext.form.FieldSet",

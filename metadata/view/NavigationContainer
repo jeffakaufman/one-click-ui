@@ -1,0 +1,105 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "hidden": true,
+        "designer|userClassName": "NavigationContainer",
+        "designer|userAlias": "navigationcontainer",
+        "scrollable": true
+    },
+    "designerId": "613c7bbc-2c20-4f68-b8b2-4eaff1a11266",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "end",
+                "docked": "top",
+                "title": "Navigation"
+            },
+            "designerId": "eed005e5-4b8b-495f-8cbb-f8f8e5d0399c",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnNavigation",
+                        "iconAlign": "right",
+                        "iconCls": "bookmarks",
+                        "text": null
+                    },
+                    "designerId": "13453aae-10e5-4507-84ed-4c660e6e791f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "btnHome",
+                "margin": "0.5em",
+                "text": "Home"
+            },
+            "designerId": "01b0e684-853e-4c3e-afa8-7c01164e4b5d"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "btnProfile",
+                "margin": "0.5em",
+                "text": "Profile"
+            },
+            "designerId": "7dc9a1b6-f0be-4a68-84a5-5d6c89d7c824"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "btnCampaign",
+                "margin": "0.5em",
+                "badgeText": "5",
+                "text": "Campaign"
+            },
+            "designerId": "b428c630-d974-4ad4-a94a-6496258d8b99"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "btnLogout",
+                "margin": "3em 0.5em",
+                "text": "LOG OUT"
+            },
+            "designerId": "3b09fb36-4078-4ff8-840f-b3ab60f553a4"
+        }
+    ]
+}

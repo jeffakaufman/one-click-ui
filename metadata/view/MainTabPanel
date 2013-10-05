@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "id": "maintabpanel",
         "ui": "light",
         "designer|userClassName": "MainTabPanel",
         "designer|userAlias": "maintabpanel"
@@ -56,17 +57,18 @@
             "masterInstanceId": "36bf4e63-ac1e-4847-9930-e116ee506899"
         },
         {
-            "type": "Ext.Container",
+            "type": "linkedinstance",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Search",
+                "title": "Navigation",
                 "iconCls": "search"
             },
-            "designerId": "bf97513d-a094-4b69-bd62-84dea4c8fda9"
+            "designerId": "63d6f8d7-a6e6-4a7c-9d66-50579ef7473c",
+            "masterInstanceId": "613c7bbc-2c20-4f68-b8b2-4eaff1a11266"
         },
         {
             "type": "Ext.tab.Bar",

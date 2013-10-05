@@ -22,26 +22,31 @@
 .campaignDiv-right{
 	float:right;
     width:100px;
+    font-size: 0.7em;
 }
 
 .campaignDiv-unsuccess-left{
     border-left:8px solid #ef3122;
     margin-left: 2px;
+    font-size: 0.7em;
 }
     
 .campaignDiv-success-left{
     border-left:8px solid #66bc45; 
     margin-left: 2px;
+    font-size: 0.7em;
 }
 
 .campaignDiv-active-left{
     border-left:8px solid #3b59a7; 
     margin-left: 2px;
+    font-size: 0.7em;
 }
 
 .campaignDiv-inactive-left{
     border-left:8px solid #ab7942; 
     margin-left: 2px;
+    font-size: 0.7em;
 }
 
 

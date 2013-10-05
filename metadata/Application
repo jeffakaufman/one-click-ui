@@ -7,11 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "models": [
-            "PercentChange"
+            "PercentChange",
+            "Score"
         ],
         "stores": [
             "PercentChanges",
-            "PostEngagements"
+            "PostEngagements",
+            "Scores",
+            "SuccessCampaigns",
+            "UnsuccessCampaigns",
+            "ActiveCampaigns",
+            "InactiveCampaigns"
         ],
         "views": [
             "UnsuccessCampaignList",
@@ -29,7 +35,10 @@
             "RptPercentChange",
             "RptPostEngagement",
             "ReportContainer",
-            "ReportHome"
+            "ReportHome",
+            "RptScoreDetails",
+            "RptScore",
+            "NavigationContainer"
         ],
         "requires": [
             "OneClick.Accordion"

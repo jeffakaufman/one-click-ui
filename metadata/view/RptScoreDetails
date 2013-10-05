@@ -1,0 +1,77 @@
+{
+    "type": "Ext.dataview.DataView",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RptScoreDetails",
+        "designer|userAlias": "rptscoredetails",
+        "scrollable": false,
+        "itemCls": "report",
+        "store": "ScoreStore"
+    },
+    "designerId": "8038093f-aa44-47f3-9cee-b311e2de7689",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<tpl if=\"id == 0\">",
+                    "        <div >    ",
+                    "            <div style=\"float:left; width:25%;font-size: 0.7em;height: 25px;\">",
+                    "                &nbsp;",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.4em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Likes",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.4em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Comments",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.4em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Shares",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.4em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Actions",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.4em;border-left: 2px solid #dedede; text-align:center;height: 25px;\">",
+                    "                Score",
+                    "            </div>",
+                    "            <div style=\"clear:both;\"></div>",
+                    "        </div>",
+                    "    <tpl else>",
+                    "        <div >    ",
+                    "            <div style=\"float:left; width:25%;font-size: 0.5em; line-height:30px;height:30px;\">",
+                    "                {timeaxis}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:right;line-height:30px;height:30px;\">",
+                    "                {likes}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:right;line-height:30px;height:30px;\">",
+                    "                {comments}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:right;line-height:30px;height:30px;\">",
+                    "                {shares}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:right;line-height:30px;height:30px;\">",
+                    "                {actions}",
+                    "            </div>",
+                    "            <div style=\"float:left; width:15%;font-size: 0.5em;border-left: 2px solid #dedede; text-align:right;line-height:30px;height:30px;\">",
+                    "                {score}",
+                    "            </div>",
+                    "            <div style=\"clear:both;\"></div>",
+                    "        </div>",
+                    "</tpl>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "4a62d7b1-3107-4d27-88da-e8ec3ccfd383"
+        }
+    ]
+}

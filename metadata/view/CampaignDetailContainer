@@ -22,8 +22,10 @@
             "codeClass": null,
             "userConfig": {
                 "docked": "top",
-                "itemId": "headerBar",
-                "title": ""
+                "itemId": "headerBar"
+            },
+            "configAlternates": {
+                "title": "object"
             },
             "designerId": "3716260d-8bfd-4a9d-9f5c-6772c35d44bc",
             "cn": [
@@ -66,31 +68,35 @@
                     "codeClass": null,
                     "userConfig": {
                         "implHandler": [
-                            "<div>\r",
-                            "    <div style=\"text-align:center;height:2em;\">Campaign: {name}</div>\r",
-                            "    <div style=\"height:8em;\">\r",
-                            "        <div style=\"width:30%; height:8em; float:left; text-align:center;\">\r",
-                            "            <tpl if=\"image\">\r",
-                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"{image}\" width=\"auto\">                \r",
-                            "            <tpl else>\r",
-                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"images/nophoto.jpg\" width=\"auto\">\r",
-                            "            </tpl>\r",
-                            "        </div>\r",
-                            "        <div style=\"width:65%; height:8em; float:left;\">\r",
-                            "\t\t\t<tpl if=\"status==1\">\r",
-                            "                <div style=\"font-size: 0.7em; color:#3E59A7; margin: 0 0.5em;\">&nbsp;<b>Active.</b> Launched {startdate}</div>\r",
-                            "            <tpl else>\r",
-                            "                <div style=\"font-size: 0.7em; color:#AB7942; margin: 0 0.5em;\">&nbsp;<b>Inactive.</b> </div>\r",
-                            "            </tpl>\r",
-                            "\t\t\t<div style=\"margin: 0.5em;\">{description}</div>\r",
-                            "            <div style=\"margin: 0 0.5em; font-size:0.8em;\">\r",
-                            "                <img style=\"height:1em;\" src=\"images/Facebook_like_thumb.png\" width=\"auto\"> {fblikes}\r",
-                            "                <img style=\"height:1em; margin: 0 0 0 3em; \" src=\"images/Facebook_post.png\" width=\"auto\"> {fbposts}\r",
-                            "\t\t\t</div>\r",
-                            "        </div>\r",
-                            "        <div style=\"clear:both;\"></div>\r",
-                            "        \r",
-                            "    </div>\r",
+                            "<div>",
+                            "    <div style=\"text-align:center;height:2em;font-size:0.7em;\">Campaign: {name}</div>",
+                            "    <div style=\"height:8em;\">",
+                            "        <div style=\"width:30%; height:8em; float:left; text-align:center;\">",
+                            "            <tpl if=\"image\">",
+                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"{image}\" width=\"auto\">                ",
+                            "            <tpl else>",
+                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"images/nophoto.jpg\" width=\"auto\">",
+                            "            </tpl>",
+                            "        </div>",
+                            "        <div style=\"width:65%; height:8em; float:left;\">",
+                            "\t\t\t<tpl if=\"status==1\">",
+                            "                <div style=\"font-size: 0.7em; color:#3E59A7; margin: 0 0.5em;\">&nbsp;<b>Active.</b> Launched {str_startdate}</div>",
+                            "            <tpl elseif=\"status==2\">",
+                            "                <div style=\"font-size: 0.7em; color:#66bc45; margin: 0 0.5em;\">&nbsp;<b>Success.</b> </div>",
+                            "            <tpl elseif=\"status==3\">",
+                            "                <div style=\"font-size: 0.7em; color:#EF3222; margin: 0 0.5em;\">&nbsp;<b>Unsuccess.</b> </div>",
+                            "            <tpl elseif=\"status==0\">",
+                            "                <div style=\"font-size: 0.7em; color:#ab7942; margin: 0 0.5em;\">&nbsp;<b>Inactive.</b> </div>",
+                            "            </tpl>",
+                            "\t\t\t<div style=\"margin: 0.5em;font-size:0.7em;\">{description}</div>",
+                            "            <div style=\"margin: 0 0.5em; font-size:0.8em;\">",
+                            "                <img style=\"height:1em;\" src=\"images/Facebook_like_thumb.png\" width=\"auto\"> {fblikes}",
+                            "                <img style=\"height:1em; margin: 0 0 0 3em; \" src=\"images/Facebook_post.png\" width=\"auto\"> {fbposts}",
+                            "\t\t\t</div>",
+                            "        </div>",
+                            "        <div style=\"clear:both;\"></div>",
+                            "        ",
+                            "    </div>",
                             "</div>"
                         ],
                         "designer|displayName": "tpl"
@@ -107,9 +113,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "userengagement",
                 "margin": "0 0.5em 0.5em",
                 "label": "User Engagement",
-                "labelWidth": "50%"
+                "labelWidth": "50%",
+                "name": "userengagement"
             },
             "designerId": "84970ee1-d6c8-4701-bb6d-fecdce4165bc"
         },
@@ -121,9 +129,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "startdate",
                 "margin": "0 0.5em 0.5em",
-                "label": "Field",
+                "label": "Start Date",
                 "labelWidth": "50%",
+                "name": "startdate",
                 "placeHolder": "mm/dd/yyyy"
             },
             "designerId": "81df70e0-9d3d-490a-9541-c0e2aeef8ccb",
@@ -173,9 +183,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "enddate",
                 "margin": "0 0.5em 0.5em",
-                "label": "Field",
+                "label": "End Date",
                 "labelWidth": "50%",
+                "name": "enddate",
                 "placeHolder": "mm/dd/yyyy"
             },
             "designerId": "1840076e-58f7-46bd-9315-70c6b2452f5e",
@@ -225,9 +237,11 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "budget",
                 "margin": "0 0.5em 0.5em",
                 "label": "Budget",
-                "labelWidth": "50%"
+                "labelWidth": "50%",
+                "name": "budget"
             },
             "designerId": "dd22bf90-0176-492f-9311-e1c7f0b1c6f4"
         },

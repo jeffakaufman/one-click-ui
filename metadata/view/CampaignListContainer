@@ -16,17 +16,35 @@
     "designerId": "7733424d-6377-46c8-af2b-fada9185482b",
     "cn": [
         {
-            "type": "Ext.TitleBar",
+            "type": "Ext.Toolbar",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "container|pack": "end",
                 "docked": "top",
                 "title": "Home"
             },
-            "designerId": "442a00c8-1376-49fa-9f80-34255eef33f0"
+            "designerId": "e383e5e6-b613-49cb-9394-ca5b1e624568",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "btnNavigation",
+                        "iconAlign": "right",
+                        "iconCls": "bookmarks",
+                        "text": null
+                    },
+                    "designerId": "c80cfe4e-efbb-4ae3-8abf-c011537c612d"
+                }
+            ]
         },
         {
             "type": "Ext.Label",

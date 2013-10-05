@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js",
+        "url": "Global.js",
+        "id": "Global"
+    },
+    "designerId": "417e9f94-e983-429c-bc18-6dc29d0ce587"
+}

@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Score",
+        "storeId": "ScoreStore",
+        "designer|userClassName": "Scores",
+        "designer|userAlias": "scores"
+    },
+    "designerId": "3e608479-2e1c-403e-841a-724ccdfbe230"
+}

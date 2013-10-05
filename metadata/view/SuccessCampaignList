@@ -13,7 +13,7 @@
         "designer|userAlias": "successcampaignlist",
         "scrollable": false,
         "itemCls": "campaign",
-        "store": "CampaignsStore"
+        "store": "SuccessCampaignStore"
     },
     "designerId": "aa0d5d83-7686-4126-b6f4-9a6f76f55b06",
     "cn": [
@@ -26,19 +26,19 @@
             "codeClass": null,
             "userConfig": {
                 "implHandler": [
-                    "<div class=\"campaignDiv\" >    \r",
-                    "    <div class=\"campaignDiv-right\">\r",
-                    "        <div style=\"float:right; width:20px\">\r",
-                    "            >\r",
-                    "        </div>\r",
-                    "        <div style=\"width:80px; text-align:right;\">\r",
-                    "            ({fblikes}) &nbsp;&nbsp;\r",
-                    "        </div>\r",
-                    "        <div style=\"clear:both;\"></div>\r",
-                    "    </div>\r",
-                    "    <div class=\"campaignDiv-success-left\">&nbsp;&nbsp;{name}</div>\r",
-                    "    \r",
-                    "    <div style=\"clear:both;\"></div>\r",
+                    "<div class=\"campaignDiv\" >    ",
+                    "    <div class=\"campaignDiv-right\">",
+                    "        <div style=\"float:right; width:20px\">",
+                    "            >",
+                    "        </div>",
+                    "        <div style=\"width:80px; text-align:right;\">",
+                    "            ({score}) &nbsp;&nbsp;",
+                    "        </div>",
+                    "        <div style=\"clear:both;\"></div>",
+                    "    </div>",
+                    "    <div class=\"campaignDiv-success-left\">&nbsp;&nbsp;{name}</div>",
+                    "    ",
+                    "    <div style=\"clear:both;\"></div>",
                     "</div>"
                 ],
                 "designer|displayName": "itemTpl"

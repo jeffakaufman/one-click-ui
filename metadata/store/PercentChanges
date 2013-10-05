@@ -11,33 +11,5 @@
         "designer|userClassName": "PercentChanges",
         "designer|userAlias": "percentchanges"
     },
-    "designerId": "7b2bd705-6c13-4ba9-bc71-31be7ab91261",
-    "cn": [
-        {
-            "type": "Ext.data.proxy.Ajax",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "url": "dummy_percentchanges.js"
-            },
-            "designerId": "a069bf61-2096-43b1-aa2e-3d7c4fa8f6b9",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "rootProperty": "percentchanges"
-                    },
-                    "designerId": "e9f95dcf-af58-4462-ae5c-c7384b62114e"
-                }
-            ]
-        }
-    ]
+    "designerId": "7b2bd705-6c13-4ba9-bc71-31be7ab91261"
 }
