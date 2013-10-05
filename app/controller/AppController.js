@@ -413,7 +413,7 @@ Ext.define('OneClick.controller.AppController', {
                                 enddate : rec.end_dt,
                                 budget : rec.price,
                                 fblikes : rec.likes,
-                                fbposts : rec.commnets,
+                                fbposts : rec.comments,
                                 score : rec.likes + rec.comments,
                                 fbpage : rec.owner_page
                             });
