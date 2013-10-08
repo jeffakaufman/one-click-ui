@@ -38,7 +38,8 @@
             "ReportHome",
             "RptScoreDetails",
             "RptScore",
-            "NavigationContainer"
+            "NavigationContainer",
+            "AppInitContainer"
         ],
         "requires": [
             "OneClick.Accordion"
@@ -58,6 +59,23 @@
             },
             "codeClass": null,
             "designerId": "c589adad-587e-41f5-9c22-5b1c146f5b44"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "if (!appLunched){",
+                    "    return true;",
+                    "}"
+                ]
+            },
+            "designerId": "dfbb2860-8e0b-4216-9877-98ce0b63b023"
         }
     ]
 }

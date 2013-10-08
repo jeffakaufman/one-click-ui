@@ -55,7 +55,8 @@ Ext.application({
         'ReportHome',
         'RptScoreDetails',
         'RptScore',
-        'NavigationContainer'
+        'NavigationContainer',
+        'AppInitContainer'
     ],
     controllers: [
         'AppController'
@@ -63,7 +64,9 @@ Ext.application({
     name: 'OneClick',
 
     launch: function() {
-
+        if (!appLunched){
+            return true;
+        }
         Ext.create('OneClick.view.MainContainer', {fullscreen: true});
     }
 

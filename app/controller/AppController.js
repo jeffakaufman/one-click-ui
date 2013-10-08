@@ -48,7 +48,8 @@ Ext.define('OneClick.controller.AppController', {
             rptPostEngagement: 'rptpostengagement',
             rptScoreDetails: 'rptscoredetails',
             rptScore: 'rptscore',
-            navigationContainer: 'navigationcontainer'
+            navigationContainer: 'navigationcontainer',
+            appInitContainer: 'appinitcontainer'
         },
 
         control: {
@@ -93,6 +94,9 @@ Ext.define('OneClick.controller.AppController', {
             },
             "tabpanel": {
                 activate: 'onTabpanelActivate'
+            },
+            "maincontainer": {
+                initialize: 'mainContainer_onContainerActivate'
             }
         }
     },
@@ -114,6 +118,7 @@ Ext.define('OneClick.controller.AppController', {
             function(response) {
                 if (response.authResponse) {
                     FB.api('/me', function(response) {
+                        storeUserInfo();
                         userName = response.name;
                         userID = response.id;
                         userEmail = response.email;
@@ -292,6 +297,7 @@ Ext.define('OneClick.controller.AppController', {
             "Are you sure ?",
             function(buttonId) {
                 if(buttonId === 'yes') {
+                    removeUserInfo();
                     mainContainer.setActiveItem(loginContainer);
                 }
             }, 
@@ -317,6 +323,12 @@ Ext.define('OneClick.controller.AppController', {
         this.componseCampaignListContainer();
     },
 
+    mainContainer_onContainerActivate: function(component, eOpts) {
+        if (userID && userEmail){
+            this.buildMainContainer();
+        }
+    },
+
     composeCampaignDetailContainer: function(record) {
         var homeContainer = this.getHomeContainer(),
             campaignDetailContainer = this.getCampaignDetailContainer(),
@@ -326,6 +338,7 @@ Ext.define('OneClick.controller.AppController', {
         var month = record.get('startdate').substring(5,7);
         var day = record.get('startdate').substring(8,10);
         record.data.str_startdate = month + "/" + day;
+        record.data.image = userAvatar;
         campaignDetailContainer.query('#startdate')[0].setValue({
             month: month,
             day  : day,
@@ -338,22 +351,45 @@ Ext.define('OneClick.controller.AppController', {
         summaryView.setData(record.data);
 
         campaignDetailContainer.query('#userengagement')[0].setValue(record.get('userengagement'));
+        campaignDetailContainer.query('#pagedata')[0].setValue(record.get('header'));
+        if (record.get('owner_page') == null){
+            campaignDetailContainer.query('#pagedata')[0].setLabel('Post')
+            headerBar.setTitle(
+            {
+                title : record.get('owner_post'),
+                centered: true,
+                style : 'font-size:0.7em',
+                maxWidth : '12em'
+
+            }
+            );
+        }else {
+            campaignDetailContainer.query('#pagedata')[0].setLabel('Page')
+            headerBar.setTitle(
+            {
+                title : record.get('owner_page'),
+                centered: true,
+                style : 'font-size:0.7em',
+                maxWidth : '12em'
+
+            }
+            );
+        }
 
         campaignDetailContainer.query('#enddate')[0].setValue({
             month: month,
             day  : day,
             year : year
         });
-        headerBar.setTitle(
-        {
-            title : record.get('fbpage'),
-            centered: true,
-            style : 'font-size:0.7em',
-            maxWidth : '12em'
 
-        }
-        );
+
+        Ext.Viewport.setMasked({
+            xtype: 'loadmask',
+            message: 'Connecting...'
+        });  
         campaignDetailContainer.query('#budget')[0].setValue(formatCurrency(record.get('budget')));
+
+
         homeContainer.setActiveItem(campaignDetailContainer);
     },
 
@@ -383,6 +419,7 @@ Ext.define('OneClick.controller.AppController', {
                 xtype: 'loadmask',
                 message: 'Connecting...'
             });       
+
             Ext.Ajax.request({
                 method : "GET",        
                 headers: {
@@ -404,6 +441,7 @@ Ext.define('OneClick.controller.AppController', {
                             var rec = response[i];
                             var record = Ext.create('OneClick.model.Campaign', {
                                 id : rec.id,
+                                header : rec.name,
                                 name : rec.title,
                                 description : rec.description,
                                 image : '',
@@ -415,7 +453,9 @@ Ext.define('OneClick.controller.AppController', {
                                 fblikes : rec.likes,
                                 fbposts : rec.comments,
                                 score : rec.likes + rec.comments,
-                                fbpage : rec.owner_page
+                                fbpage : rec.owner_page,
+                                owner_page : rec.owner_page,
+                                owner_post : rec.owner_post
                             });
                             if (record.get('status') == "1"){
                                 activeCampaigns.push(record);
@@ -469,7 +509,10 @@ Ext.define('OneClick.controller.AppController', {
         var me = this,
             mainContainer = this.getMainContainer(),
             mainTabPanel = this.getMainTabPanel(),
+
             homeContainer = this.getHomeContainer(),
+            appInitContainer = this.getAppInitContainer(),
+            loginContainer = this.getLoginContainer(),
             activeCampaignList = this.getActiveCampaignList(),
             inactiveCampaignList = this.getInactiveCampaignList(),
             successCampaignList = this.getSuccessCampaignList(),
@@ -480,8 +523,7 @@ Ext.define('OneClick.controller.AppController', {
             xtype: 'loadmask',
             message: 'Connecting...'
         });
-
-
+        mainContainer.setActiveItem(appInitContainer);
         Ext.Ajax.request({
             method: "POST",
             url: basicURL + "auth/",
@@ -507,14 +549,20 @@ Ext.define('OneClick.controller.AppController', {
                 Ext.Viewport.setMasked(false);
                 if ((!response) || (!response.responseText)){
                     alert("Sorry, you can't login. Please try later.");
+                    mainContainer.setActiveItem(loginContainer);
                     return;
                 };
                 var response = Ext.decode(response.responseText);
                 if (response.non_field_errors){
                     alert(response.non_field_errors[0]);
                 }
+                mainContainer.setActiveItem(loginContainer);
             }
         });
+
+    },
+
+    init: function(application) {
 
     }
 

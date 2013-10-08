@@ -44,7 +44,7 @@ Ext.define('OneClick.view.CampaignDetailContainer', {
                     '    <div style="height:8em;">',
                     '        <div style="width:30%; height:8em; float:left; text-align:center;">',
                     '            <tpl if="image">',
-                    '                <img style="border: 3px solid #cccccc;height:8em; max-width:100%;" src="{image}" width="auto">                ',
+                    '                <img style="border: 3px solid #cccccc;height:8em; max-width:100%;" src="{image}" width="auto" onload="avatarImageLoaded()">                ',
                     '            <tpl else>',
                     '                <img style="border: 3px solid #cccccc;height:8em; max-width:100%;" src="images/nophoto.jpg" width="auto">',
                     '            </tpl>',
@@ -78,6 +78,14 @@ Ext.define('OneClick.view.CampaignDetailContainer', {
                 label: 'User Engagement',
                 labelWidth: '50%',
                 name: 'userengagement'
+            },
+            {
+                xtype: 'textfield',
+                id: 'pagedata',
+                margin: '0 0.5em 0.5em',
+                label: 'Page',
+                labelWidth: '50%',
+                name: 'pagedata'
             },
             {
                 xtype: 'datepickerfield',

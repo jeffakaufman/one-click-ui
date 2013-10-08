@@ -154,6 +154,42 @@
                 "name": "score"
             },
             "designerId": "51f400e1-4b06-4e98-92c8-aeccf117e2af"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "header"
+            },
+            "designerId": "35595fb5-d1a7-4bdb-82e5-290a35bae593"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "owner_page"
+            },
+            "designerId": "f79deb26-e4a4-4ce3-952a-20988225a934"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "owner_post"
+            },
+            "designerId": "d37e7152-dba1-4600-8e1d-3837d4114bba"
         }
     ]
 }

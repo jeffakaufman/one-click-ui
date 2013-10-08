@@ -2,10 +2,13 @@ basicURL = "http://one-click-dev.herokuapp.com/api/";
 FBAppID = "114114968758920";
 enableFacebook = false;
 initializeFacebook();
+appLunched = true;
+//userID = '';
+//userEmail = '';
 
-userID = '100002930556199';
+userID = '100001751826481';
+userEmail = 'jeff@kaufmaninternational.com';
 userName = ''
-userEmail = 'icbsoft87@gmail.com';
 userAvatar = '';
 userPhone = '';
 userCarrier = '';
@@ -19,6 +22,8 @@ unsuccessCampaigns = [];
 percentChanges = [];
 postChanges = [];
 scores = [];
+
+localDB = undefined;
 
 function getUserInformation(){
     var response = Ext.Ajax.request({
@@ -43,10 +48,12 @@ function getUserInformation(){
         userCarrier = response.carrier;
         return true;
     }
-	return false;
+    return false;
     
 }
-
+function avatarImageLoaded(){
+    Ext.Viewport.setMasked(false);  
+}
 function getCampaignList(){
 
 }
@@ -61,7 +68,7 @@ function getCampaignDetail(campaignID){
     postChanges = [];
     scores = [];
     
-	var response = Ext.Ajax.request({
+    var response = Ext.Ajax.request({
         method : "GET",
         async : false,
         headers: {
@@ -75,8 +82,8 @@ function getCampaignDetail(campaignID){
     response = Ext.decode(response.responseText);
     
     if (response.length > 0){
-    	for (var i = 0; i < response.length; i++){
-        	record = response[i];            
+        for (var i = 0; i < response.length; i++){
+            record = response[i];            
             mLikes = record.my_likes;
             mComments = record.my_comments;
             cLikes = record.competitor_likes;
@@ -128,32 +135,32 @@ function getCampaignDetail(campaignID){
             var mins = timeAxis.substring(14,16);
             timeAxis = month + "/" + day  +"/" + year +" " + hour + ":" + mins;
             percentChangeRecord = {
-				timeaxis : timeAxis,
+                timeaxis : timeAxis,
                 mylikes : ((mLikes / dMLikes) * 100).toFixed(2),
                 mycomments : ((mComments / dMComments) * 100).toFixed(2),
                 cmplikes : ((cLikes / dCLikes) * 100).toFixed(2),
                 cmpcomments : ((cComments / dCComments) * 100).toFixed(2),
-			};            
+            };            
             postRecord = {
-				timeaxis : timeAxis,
+                timeaxis : timeAxis,
                 mylikes : mLikes,
                 mycomments : mComments,
                 cmplikes : cLikes,
                 cmpcomments : cComments,
-			};
+            };
             scoreRecord = {
-				timeaxis : timeAxis,
+                timeaxis : timeAxis,
                 likes : mLikes,
                 comments : mComments,
                 shares : 'X',
                 actions : actions,
                 score : 'X'
-			};
+            };
             percentChanges.insert(0,percentChangeRecord);
             postChanges.insert(0,postRecord);
             scores.insert(0, scoreRecord);
-		}
-	}
+        }
+    }
 }
 
 function initializeFacebook(){
@@ -164,7 +171,10 @@ function initializeFacebook(){
         
         document.addEventListener('deviceready', function() {
                                   try {
-                                  FB.init({ appId: FBAppID, nativeInterface: CDV.FB, useCachedDialogs: false });
+                                    db = window.openDatabase("oneclickdb", "1.0", "oneclickdb", 1000000);
+                                    db.transaction(populateDB, errorCB, successCB);
+                                    db.transaction(queryDB, errorCB);
+                                    FB.init({ appId: FBAppID, nativeInterface: CDV.FB, useCachedDialogs: false });
                                   
                                   } catch (e) {
                                   alert(e);
@@ -174,9 +184,52 @@ function initializeFacebook(){
     }
 }
 
+ function logoutDB(tx) {        
+         tx.executeSql('DELETE FROM USER');        
+    }
+
+ function removeUserInfo(){
+    db.transaction(logoutDB, errorCB, successCB);
+ }
+
+function populateDB(tx) {
+    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique, userid, useremail)');
+}
+
+function storeUserInfo(){
+    db.transaction(insertUserDB, errorCB, successCB);
+}
+
+function insertUserDB(tx) {
+    tx.executeSql('INSERT INTO USER (id, userid, useremail) VALUES (1, "' + userID + '", "' + userEmail + '")');
+}
+function errorCB(err) {
+    alert("Error processing SQL: "+err);
+}
+
+function successCB() {
+    
+}
+
+function queryDB(tx) {
+    tx.executeSql('SELECT * FROM USER', [], querySuccess, errorCB);
+}
+
+function querySuccess(tx, results) {
+    // this will be true since it was a select statement and so rowsAffected was 0
+    var len = results.rows.length;
+    for (var i=0; i<len; i++){
+            userID = results.rows.item(i).userid;
+            userEmail = results.rows.item(i).useremail;
+            //alert("Row = " + i + " ID = " + Ext.encode(results.rows.item(i)));
+        }
+    Ext.create('OneClick.view.MainContainer', {fullscreen: true});
+    
+}
+
 function loginFacebook(){
     if (enableFacebook){
-	FB.login(
+    FB.login(
              function(response) {
              if (response.authResponse) {
                 FB.api('/me', function(response) {

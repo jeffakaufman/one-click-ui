@@ -54,6 +54,15 @@ Ext.define('OneClick.model.Campaign', {
             },
             {
                 name: 'score'
+            },
+            {
+                name: 'header'
+            },
+            {
+                name: 'owner_page'
+            },
+            {
+                name: 'owner_post'
             }
         ]
     }

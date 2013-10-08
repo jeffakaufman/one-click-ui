@@ -73,7 +73,7 @@
                             "    <div style=\"height:8em;\">",
                             "        <div style=\"width:30%; height:8em; float:left; text-align:center;\">",
                             "            <tpl if=\"image\">",
-                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"{image}\" width=\"auto\">                ",
+                            "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"{image}\" width=\"auto\" onload=\"avatarImageLoaded()\">                ",
                             "            <tpl else>",
                             "                <img style=\"border: 3px solid #cccccc;height:8em; max-width:100%;\" src=\"images/nophoto.jpg\" width=\"auto\">",
                             "            </tpl>",
@@ -120,6 +120,22 @@
                 "name": "userengagement"
             },
             "designerId": "84970ee1-d6c8-4701-bb6d-fecdce4165bc"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "pagedata",
+                "margin": "0 0.5em 0.5em",
+                "label": "Page",
+                "labelWidth": "50%",
+                "name": "pagedata"
+            },
+            "designerId": "281c1449-96f2-4c1a-9c2e-a23a7433d8d6"
         },
         {
             "type": "Ext.field.DatePicker",

@@ -1,0 +1,57 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AppInitContainer",
+        "designer|userAlias": "appinitcontainer",
+        "layout": "vbox"
+    },
+    "designerId": "0986de10-90e6-447c-bf01-86902b07612a",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5
+            },
+            "designerId": "57f10be5-271a-4538-a667-780a1bb03fcd",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom",
+                        "html": "<center>OneClick</center>",
+                        "ui": "",
+                        "width": "100%"
+                    },
+                    "designerId": "a49a51dc-e910-487b-9010-d6367c8d441a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 0.5
+            },
+            "designerId": "998ff148-2da2-49f0-b6fb-e8513c8b4d9c"
+        }
+    ]
+}

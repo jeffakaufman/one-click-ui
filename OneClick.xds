@@ -296,11 +296,20 @@
                 "app/store/InactiveCampaigns.js"
             ],
             "className": "InactiveCampaigns"
+        },
+        "0986de10-90e6-447c-bf01-86902b07612a": {
+            "paths": [
+                "metadata/view/AppInitContainer",
+                "app/view/override/AppInitContainer.js",
+                "app/view/AppInitContainer.js"
+            ],
+            "className": "AppInitContainer"
         }
     },
     "viewOrderMap": {
         "view": [
             "3e353059-7fb9-48cf-9226-15840dc38637",
+            "0986de10-90e6-447c-bf01-86902b07612a",
             "f6029c8c-7587-4783-b9ee-9041c49ea2aa",
             "b7a3bf91-a4cf-41b7-ac23-4251b38a4545",
             "fdb7cade-ecfe-41d4-83f5-f5dfb25bb7a2",
