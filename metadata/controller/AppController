@@ -236,7 +236,7 @@
                     "            accessToken = response.token;",
                     "            if (getUserInformation()){                    ",
                     "                mainContainer.setActiveItem(mainTabPanel);",
-                    "                ",
+                    "",
                     "            };",
                     "        }",
                     "    },",

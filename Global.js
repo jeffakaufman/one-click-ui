@@ -129,10 +129,10 @@ function getCampaignDetail(campaignID){
             timeAxis = month + "/" + day  +"/" + year +" " + hour + ":" + mins;
             percentChangeRecord = {
 				timeaxis : timeAxis,
-                mylikes : (((mLikes - prevMLikes) / dMLikes) * 100).toFixed(2),
-                mycomments : (((mComments - prevMComments) / dMComments) * 100).toFixed(2),
-                cmplikes : (((cLikes - prevCLikes) / dCLikes) * 100).toFixed(2),
-                cmpcomments : (((cComments - prevCComments) / dCComments) * 100).toFixed(2),
+                mylikes : ((mLikes / dMLikes) * 100).toFixed(2),
+                mycomments : ((mComments / dMComments) * 100).toFixed(2),
+                cmplikes : ((cLikes / dCLikes) * 100).toFixed(2),
+                cmpcomments : ((cComments / dCComments) * 100).toFixed(2),
 			};            
             postRecord = {
 				timeaxis : timeAxis,

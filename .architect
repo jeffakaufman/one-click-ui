@@ -634,18 +634,19 @@
             "d539ce0f-f23d-4293-98cb-18e0a441626d",
             "38b3af17-76b0-4f6a-9ec2-5ee2c900d7a2",
             "4b9ec70c-a164-482a-b758-1f97c5199b0b",
-            "cabe21ea-0321-4afc-bb0b-654525bbf24c"
+            "cabe21ea-0321-4afc-bb0b-654525bbf24c",
+            "417e9f94-e983-429c-bc18-6dc29d0ce587"
         ]
     },
     "canvasState": {
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "97e45595-9dc0-4172-9270-b72c268730a5",
-        "selectedInstance": "c4b8f846-26a3-49ca-86b7-c42e67de1806"
+        "topInstance": "417e9f94-e983-429c-bc18-6dc29d0ce587",
+        "selectedInstance": "417e9f94-e983-429c-bc18-6dc29d0ce587"
     },
     "codeState": {
-        "topInstance": "97e45595-9dc0-4172-9270-b72c268730a5"
+        "topInstance": "417e9f94-e983-429c-bc18-6dc29d0ce587"
     },
     "editMode": "code"
 }
