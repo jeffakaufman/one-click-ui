@@ -22,9 +22,20 @@ unsuccessCampaigns = [];
 percentChanges = [];
 postChanges = [];
 scores = [];
-
+pxSize = 0;
 localDB = undefined;
+function getDefaultFontSize(pa){
+ pa= pa || document.body;
+ var who= document.createElement('div');
 
+ who.style.cssText='display:inline-block; padding:0; line-height:1; position:absolute; visibility:hidden; font-size:1em';
+
+ who.appendChild(document.createTextNode('M'));
+ pa.appendChild(who);
+ var fs= [who.offsetWidth, who.offsetHeight];
+ pa.removeChild(who);
+ return fs;
+}
 function getUserInformation(){
     var response = Ext.Ajax.request({
         method: "GET",
@@ -171,6 +182,8 @@ function initializeFacebook(){
         
         document.addEventListener('deviceready', function() {
                                   try {
+                                    
+        
                                     db = window.openDatabase("oneclickdb", "1.0", "oneclickdb", 1000000);
                                     db.transaction(populateDB, errorCB, successCB);
                                     db.transaction(queryDB, errorCB);

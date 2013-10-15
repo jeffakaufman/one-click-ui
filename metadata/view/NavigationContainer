@@ -82,7 +82,7 @@
             "userConfig": {
                 "itemId": "btnCampaign",
                 "margin": "0.5em",
-                "badgeText": "5",
+                "badgeText": null,
                 "text": "Campaign"
             },
             "designerId": "b428c630-d974-4ad4-a94a-6496258d8b99"

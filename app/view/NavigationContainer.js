@@ -54,7 +54,6 @@ Ext.define('OneClick.view.NavigationContainer', {
                 xtype: 'button',
                 itemId: 'btnCampaign',
                 margin: '0.5em',
-                badgeText: '5',
                 text: 'Campaign'
             },
             {

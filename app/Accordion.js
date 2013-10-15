@@ -115,6 +115,10 @@ Ext.define('OneClick.Accordion', {
                     tap: {
                         fn: function () {
                             if (me.getToggleOnTitlebar()) {
+                                Ext.getCmp('maintabpanel').setMasked({
+                                    xtype: 'loadmask',
+                                    message: 'Loading...'
+                                });
                                 me.toggleCollapse(titleDock.up('component'));
                             }
                         },
@@ -160,7 +164,10 @@ Ext.define('OneClick.Accordion', {
     handleToggleButton: function (btn) {
         if (!this.getToggleOnTitlebar()) {
             var component = btn.up('titlebar').up('component');
-
+            Ext.getCmp('maintabpanel').setMasked({
+                xtype: 'loadmask',
+                message: 'Loading...'
+            });
             this.toggleCollapse(component);
         }
     },
@@ -173,7 +180,7 @@ Ext.define('OneClick.Accordion', {
         if (!component.isComponent) {
             component = Ext.getCmp(component.getId());
         }
-        if (component.isInnerItem() && !(this.getMode() === 'SINGLE' && this.getExpandedItem() === component)) {
+        if (component.isInnerItem() ) {
             var titleDock   = component.titleDock,
                 titleHeight = titleDock.element.getHeight();
 
@@ -185,10 +192,12 @@ Ext.define('OneClick.Accordion', {
                 component.innerItems[0].element.removeCls('x-unsized');
             }
             component.removeAll(true);
+            Ext.getCmp('maintabpanel').setMasked(false);
         }
     },
 
     expand: function (component) {
+        
         if (component.isInnerItem()) {
             var me = this,
                 container = component.up(),
@@ -209,14 +218,11 @@ Ext.define('OneClick.Accordion', {
                 rmAnim = true;
             }
 
-           var w = Ext.getCmp('maintabpanel');
-            w.setMasked({
-                xtype: 'loadmask',
-                message: 'Loading...'
-            });
+          
+            
             getCampaignDetail(component.config.recID);      
-            w.setMasked(false);         
-            component.setHeight(150 + (percentChanges.length + 1) * 52);
+            Ext.getCmp('maintabpanel').setMasked(false);         
+            component.setHeight(150 + (percentChanges.length + 1) * pxSize * 2);
             component.collapsed = false;
 
             if (rmAnim) {
@@ -230,11 +236,12 @@ Ext.define('OneClick.Accordion', {
             
             component.add({
                     xtype : 'reportingcontainer',                
-                    height: 100 + (percentChanges.length + 1) * 52
+                    height: 100 + (percentChanges.length + 1) * pxSize * 2
             });
 
             // There was collapsing so it needs to wait until the collapsing animation is done before calculating heights
             // The delay must be > 300 (animation timing in CSS for collapsing)
+            
             if (me.getMode() === 'SINGLE') {
                 Ext.defer(function () {
                     if (container.element.getHeight() < component.element.getY() + component.fullHeight) {
@@ -249,6 +256,7 @@ Ext.define('OneClick.Accordion', {
                     }, 380);
                 }
             }
+        
         }
     }
 });

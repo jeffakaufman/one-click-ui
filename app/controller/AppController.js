@@ -276,6 +276,7 @@ Ext.define('OneClick.controller.AppController', {
         var mainTabPanel = this.getMainTabPanel(),
             navigationContainer = this.getNavigationContainer();
         mainTabPanel.setActiveItem(navigationContainer);
+        navigationContainer.query('#btnHome')[0].setBadgeText(badgeNumber);
     },
 
     navigationContainer_btnHome_Tap: function(button, e, eOpts) {
@@ -348,33 +349,17 @@ Ext.define('OneClick.controller.AppController', {
         month = record.get('enddate').substring(5,7);
         day = record.get('enddate').substring(8,10);
 
+        if (record.get('owner_page') == null){
+            campaignDetailContainer.query('#pagedata')[0].setLabel('Post')
+            record.data.owner = record.get('owner_post');
+        }else {
+            campaignDetailContainer.query('#pagedata')[0].setLabel('Page')
+            record.data.owner = record.get('owner_page');
+        }
         summaryView.setData(record.data);
 
         campaignDetailContainer.query('#userengagement')[0].setValue(record.get('userengagement'));
         campaignDetailContainer.query('#pagedata')[0].setValue(record.get('header'));
-        if (record.get('owner_page') == null){
-            campaignDetailContainer.query('#pagedata')[0].setLabel('Post')
-            headerBar.setTitle(
-            {
-                title : record.get('owner_post'),
-                centered: true,
-                style : 'font-size:0.7em',
-                maxWidth : '12em'
-
-            }
-            );
-        }else {
-            campaignDetailContainer.query('#pagedata')[0].setLabel('Page')
-            headerBar.setTitle(
-            {
-                title : record.get('owner_page'),
-                centered: true,
-                style : 'font-size:0.7em',
-                maxWidth : '12em'
-
-            }
-            );
-        }
 
         campaignDetailContainer.query('#enddate')[0].setValue({
             month: month,
@@ -414,6 +399,9 @@ Ext.define('OneClick.controller.AppController', {
         inactiveCampaigns = [];
         successCampaigns = [];
         unsuccessCampaigns = [];
+
+        resetBadgeNumber();
+
         if (accessToken != ''){
             Ext.Viewport.setMasked({
                 xtype: 'loadmask',
@@ -539,6 +527,7 @@ Ext.define('OneClick.controller.AppController', {
                 var response = Ext.decode(response.responseText);                        	
                 if (response.token){
                     accessToken = response.token;
+                    savePushToken();
                     if (getUserInformation()){                    
                         mainContainer.setActiveItem(mainTabPanel);
 

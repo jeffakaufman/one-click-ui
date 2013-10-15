@@ -64,6 +64,7 @@ Ext.define('OneClick.view.CampaignDetailContainer', {
                     '                <img style="height:1em;" src="images/Facebook_like_thumb.png" width="auto"> {fblikes}',
                     '                <img style="height:1em; margin: 0 0 0 3em; " src="images/Facebook_post.png" width="auto"> {fbposts}',
                     '			</div>',
+                    '            <div style="margin: 0.5em;font-size:0.7em;">{owner}</div>',
                     '        </div>',
                     '        <div style="clear:both;"></div>',
                     '        ',

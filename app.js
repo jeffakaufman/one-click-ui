@@ -64,6 +64,7 @@ Ext.application({
     name: 'OneClick',
 
     launch: function() {
+        pxSize = getDefaultFontSize()[0];
         if (!appLunched){
             return true;
         }
