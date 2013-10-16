@@ -531,6 +531,8 @@ Ext.define('OneClick.controller.AppController', {
                     if (getUserInformation()){                    
                         mainContainer.setActiveItem(mainTabPanel);
 
+                    } else {
+                        mainContainer.setActiveItem(loginContainer);
                     };
                 }
             },

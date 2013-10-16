@@ -255,6 +255,8 @@
                     "            if (getUserInformation()){                    ",
                     "                mainContainer.setActiveItem(mainTabPanel);",
                     "",
+                    "            } else {",
+                    "                mainContainer.setActiveItem(loginContainer);",
                     "            };",
                     "        }",
                     "    },",
