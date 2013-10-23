@@ -55,36 +55,11 @@ Ext.define('OneClick.view.ProfileContainer', {
                         label: 'Email',
                         name: 'email',
                         readOnly: true
-                    },
-                    {
-                        xtype: 'textfield',
-                        itemId: 'mobile',
-                        label: 'Mobile',
-                        name: 'mobile',
-                        readOnly: true
                     }
                 ]
             },
             {
-                xtype: 'fieldset',
-                items: [
-                    {
-                        xtype: 'selectfield',
-                        label: 'Text Frequency',
-                        labelWidth: '60%'
-                    },
-                    {
-                        xtype: 'togglefield',
-                        label: 'Send campaign data',
-                        labelWidth: '60%'
-                    }
-                ]
-            },
-            {
-                xtype: 'button',
-                margin: '0 0.5em 1.5em',
-                ui: 'confirm',
-                text: 'Save'
+                xtype: 'fieldset'
             }
         ]
     }

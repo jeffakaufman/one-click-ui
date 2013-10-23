@@ -85,21 +85,6 @@
                         "readOnly": true
                     },
                     "designerId": "3373bed7-01c2-4bda-afcd-2aa54868e38f"
-                },
-                {
-                    "type": "Ext.field.Text",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "mobile",
-                        "label": "Mobile",
-                        "name": "mobile",
-                        "readOnly": true
-                    },
-                    "designerId": "a01988d1-c902-4ac8-82fe-62c01b502893"
                 }
             ]
         },
@@ -113,49 +98,7 @@
             "userConfig": {
                 "title": null
             },
-            "designerId": "408c0e2c-a6d4-47ac-b398-e1f0e82e08ad",
-            "cn": [
-                {
-                    "type": "Ext.field.Select",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "label": "Text Frequency",
-                        "labelWidth": "60%"
-                    },
-                    "designerId": "61fc7974-3df8-4587-a690-c3e2abaf9d29"
-                },
-                {
-                    "type": "Ext.field.Toggle",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "label": "Send campaign data",
-                        "labelWidth": "60%"
-                    },
-                    "designerId": "1c637de6-62c8-4cd3-baaa-59eae661298a"
-                }
-            ]
-        },
-        {
-            "type": "Ext.Button",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "margin": "0 0.5em 1.5em",
-                "ui": "confirm",
-                "text": "Save"
-            },
-            "designerId": "be0254e9-dc3e-4ee4-8f2d-e667443fc300"
+            "designerId": "408c0e2c-a6d4-47ac-b398-e1f0e82e08ad"
         }
     ]
 }

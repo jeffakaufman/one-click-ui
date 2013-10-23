@@ -311,7 +311,7 @@ Ext.define('OneClick.controller.AppController', {
     profileContainer_onActive: function(newActiveItem, container, oldActiveItem, eOpts) {
         container.query('#name')[0].setValue(userName);
         container.query('#email')[0].setValue(userEmail);
-        container.query('#mobile')[0].setValue(userPhone);
+
     },
 
     homeContainer_onActive: function(newActiveItem, container, oldActiveItem, eOpts) {
@@ -349,17 +349,14 @@ Ext.define('OneClick.controller.AppController', {
         month = record.get('enddate').substring(5,7);
         day = record.get('enddate').substring(8,10);
 
-        if (record.get('owner_page') == null){
-            campaignDetailContainer.query('#pagedata')[0].setLabel('Post')
-            record.data.owner = record.get('owner_post');
-        }else {
-            campaignDetailContainer.query('#pagedata')[0].setLabel('Page')
-            record.data.owner = record.get('owner_page');
-        }
+
+        campaignDetailContainer.query('#pagedata')[0].setLabel('Post')
+        record.data.owner = pageTitle;
+
         summaryView.setData(record.data);
 
         campaignDetailContainer.query('#userengagement')[0].setValue(record.get('userengagement'));
-        campaignDetailContainer.query('#pagedata')[0].setValue(record.get('header'));
+        campaignDetailContainer.query('#pagedata')[0].setValue(record.get('description'));
 
         campaignDetailContainer.query('#enddate')[0].setValue({
             month: month,
@@ -383,6 +380,7 @@ Ext.define('OneClick.controller.AppController', {
             mainContainer = this.getMainContainer(),
             mainTabPanel = this.getMainTabPanel(),
             homeContainer = this.getHomeContainer(),
+            campaignListContainer = this.getCampaignListContainer(),
             activeCampaignList = this.getActiveCampaignList(),
             inactiveCampaignList = this.getInactiveCampaignList(),
             successCampaignList = this.getSuccessCampaignList(),
@@ -399,7 +397,9 @@ Ext.define('OneClick.controller.AppController', {
         inactiveCampaigns = [];
         successCampaigns = [];
         unsuccessCampaigns = [];
-
+        campaignListContainer.query('#headerBar')[0].query('#avatar')[0].setSrc(userAvatar);
+        campaignListContainer.query('#pageContainer')[0].query('#pageTitle')[0].setHtml(pageTitle);
+        campaignListContainer.query('#pageContainer')[0].query('#pageAvatar')[0].setSrc(pageAvatar);
         resetBadgeNumber();
 
         if (accessToken != ''){
@@ -427,11 +427,23 @@ Ext.define('OneClick.controller.AppController', {
                     if (response.length > 0){
                         for (var i = 0; i < response.length; i++){
                             var rec = response[i];
+                            var title = "",description = ""
+                            if (rec.post_header){
+                                title = rec.post_header;
+                            }else{
+                                title = rec.post_text;
+                            }
+                            if (rec.post_text){
+                                description = rec.post_text;
+                            }else{
+                                description = rec.post_header;
+                            }
+
                             var record = Ext.create('OneClick.model.Campaign', {
                                 id : rec.id,
                                 header : rec.name,
-                                name : rec.title,
-                                description : rec.description,
+                                name : title,
+                                description : description,
                                 image : '',
                                 status : rec.status,
                                 userengagement : rec.user_engagement,

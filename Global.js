@@ -1,29 +1,82 @@
 basicURL = "http://one-click-dev.herokuapp.com/api/";
 FBAppID = "114114968758920";
 enableFacebook = false;
+enableMobile = false;
 initializeFacebook();
 appLunched = true;
-//userID = '';
-//userEmail = '';
+userID = '';
+userEmail = '';
 
-userID = '100001751826481';
-userEmail = 'jeff@kaufmaninternational.com';
+//userID = '100001751826481';
+//userEmail = 'jeff@kaufmaninternational.com';
+pushToken = '';
+//userID = '100002930556199';
+//userEmail = 'icbsoft87@gmail.com';
+userID = '100002155501991'
+userEmail = 'leonardo.redmond@gmail.com';
+
+
 userName = ''
 userAvatar = '';
 userPhone = '';
 userCarrier = '';
 accessToken = '';
 
+badgeNumber = '';
+
 activeCampaigns = [];
 inactiveCampaigns = [];
 successCampaigns = [];
 unsuccessCampaigns = [];
-
+isPhoneGap = true;
+push = undefined;
+pageAvatar = undefined;
+pageTitle = undefined;
 percentChanges = [];
 postChanges = [];
 scores = [];
 pxSize = 0;
 localDB = undefined;
+
+function getUserInformation(){
+    var response = Ext.Ajax.request({
+        method: "GET",
+        async : false,
+        headers: {
+            'Authorization' : 'Token ' + accessToken
+        },
+        url: basicURL + "user-info/.json",
+        withCredentials: true,
+        useDefaultXhrHeader: false   
+    });
+    
+    response = Ext.decode(response.responseText);
+    if (response.constructor === String){
+        alert(response);
+        return false;
+    }
+    if (response.detail){
+        alert(response.detail);
+        return false;
+    }
+    if (response.profile_picture){
+        userAvatar = response.profile_picture;        
+        userPhone = response.phone;
+        userCarrier = response.carrier;
+        pageTitle = response.page_name;
+        pageAvatar = response.page_picture;
+        
+        return true;
+    }
+    return false;
+    
+}
+function avatarImageLoaded(){
+    Ext.Viewport.setMasked(false);  
+}
+function getCampaignList(){
+
+}
 function getDefaultFontSize(pa){
  pa= pa || document.body;
  var who= document.createElement('div');
@@ -36,39 +89,6 @@ function getDefaultFontSize(pa){
  pa.removeChild(who);
  return fs;
 }
-function getUserInformation(){
-    var response = Ext.Ajax.request({
-        method: "GET",
-        async : false,
-        headers: {
-            'Authorization' : 'Token ' + accessToken
-        },
-        url: basicURL + "user-info/.json",
-        withCredentials: true,
-        useDefaultXhrHeader: false   
-    });
-    response = Ext.decode(response.responseText);
-    
-    if (response.detail){
-        alert(response.detail);
-        return false;
-    }
-    if (response.profile_picture){
-        userAvatar = response.profile_picture;
-        userPhone = response.phone;
-        userCarrier = response.carrier;
-        return true;
-    }
-    return false;
-    
-}
-function avatarImageLoaded(){
-    Ext.Viewport.setMasked(false);  
-}
-function getCampaignList(){
-
-}
-
 
 function getCampaignDetail(campaignID){    
     var record,prevRecord, recID, mLikes,cLikes,mComments,cComments, timeAxis,actions,
@@ -173,6 +193,60 @@ function getCampaignDetail(campaignID){
         }
     }
 }
+function savePushToken(){
+    if (isPhoneGap){
+        if (accessToken != '' && pushToken != '' ){
+            Ext.Ajax.request({
+            method: "POST",
+            url: basicURL + "uaRegister/",
+            headers: {
+                'Authorization' : 'Token ' + accessToken
+            },
+            withCredentials: true,
+            useDefaultXhrHeader: false,
+            params: {
+                push_token: pushToken
+            },
+            success: function(response){
+                //alert("success")
+            },
+            failure: function(response){
+                //alert("Failure")
+            }
+        });
+
+        }
+
+    }
+}
+
+function resetBadgeNumber(){
+    if (enableMobile){
+        push.resetBadge();
+        badgeNumber = '';    
+    }
+    
+}
+function initializePushNotification(){
+
+        push = window.plugins.pushNotification
+        push.isPushEnabled(function (has_push) {
+            if (has_push){
+                push.registerEvent('registration', function (error, id) {
+                    if (error) {
+                        console.log('There was an error registering for push notifications.');
+                    } else {
+                        console.log("Registered with ID: " + id);
+                    } 
+                });
+                push.getPushID(function (id){
+                    pushToken = id;
+                    savePushToken();
+                });               
+            }
+        })
+
+}
 
 function initializeFacebook(){
     if (enableFacebook){
@@ -182,23 +256,38 @@ function initializeFacebook(){
         
         document.addEventListener('deviceready', function() {
                                   try {
-                                    
-        
                                     db = window.openDatabase("oneclickdb", "1.0", "oneclickdb", 1000000);
                                     db.transaction(populateDB, errorCB, successCB);
                                     db.transaction(queryDB, errorCB);
                                     FB.init({ appId: FBAppID, nativeInterface: CDV.FB, useCachedDialogs: false });
+                                    initializePushNotification();
                                   
                                   } catch (e) {
                                   alert(e);
                                   }
                                   }, false);
 
+    }else{
+        if (enableMobile){
+            document.addEventListener('deviceready', function() {      
+            initializePushNotification();      
+            try {
+                db = window.openDatabase("oneclickdb", "1.0", "oneclickdb", 1000000);
+                db.transaction(populateDB, errorCB, successCB);
+                Ext.create('OneClick.view.MainContainer', {fullscreen: true});
+            } catch (e) {
+                alert(e);
+            }
+            }, false);    
+        } else {
+            //Ext.create('OneClick.view.MainContainer', {fullscreen: true});
+        }
+        
     }
 }
 
  function logoutDB(tx) {        
-         tx.executeSql('DELETE FROM USER');        
+         tx.executeSql('DELETE FROM USER_INFO');        
     }
 
  function removeUserInfo(){
@@ -206,15 +295,21 @@ function initializeFacebook(){
  }
 
 function populateDB(tx) {
-    tx.executeSql('CREATE TABLE IF NOT EXISTS USER (id unique, userid, useremail)');
+    tx.executeSql('DROP TABLE IF EXISTS USER');
+    tx.executeSql('CREATE TABLE IF NOT EXISTS USER_INFO (id unique, userid, useremail, username)');
 }
 
 function storeUserInfo(){
+    //alert('INSERT INTO USER_INFO (id, userid, useremail, username) VALUES (1, "' + userID + '", "' + userEmail + '", "' + userName + '")');
+    
     db.transaction(insertUserDB, errorCB, successCB);
+
 }
 
 function insertUserDB(tx) {
-    tx.executeSql('INSERT INTO USER (id, userid, useremail) VALUES (1, "' + userID + '", "' + userEmail + '")');
+    //alert('INSERT INTO USER_INFO (id, userid, useremail, username) VALUES (1, "' + userID + '", "' + userEmail + '", "' + userName + '")');
+    tx.executeSql('DELETE FROM USER_INFO');      
+    tx.executeSql('INSERT INTO USER_INFO (id, userid, useremail, username) VALUES (1, "' + userID + '", "' + userEmail + '", "' + userName + '")');
 }
 function errorCB(err) {
     alert("Error processing SQL: "+err);
@@ -225,17 +320,26 @@ function successCB() {
 }
 
 function queryDB(tx) {
-    tx.executeSql('SELECT * FROM USER', [], querySuccess, errorCB);
+    tx.executeSql('SELECT * FROM USER_INFO', [], querySuccess, errorCB);
 }
 
 function querySuccess(tx, results) {
     // this will be true since it was a select statement and so rowsAffected was 0
     var len = results.rows.length;
+    //alert(len);
+    if (len > 0 ){
     for (var i=0; i<len; i++){
             userID = results.rows.item(i).userid;
             userEmail = results.rows.item(i).useremail;
+            userName = results.rows.item(i).username;            
+            //alert(pushToken);
             //alert("Row = " + i + " ID = " + Ext.encode(results.rows.item(i)));
         }
+    } else {
+        userID = undefined;
+        userEmail = undefined;
+        userName = undefined;
+    }
     Ext.create('OneClick.view.MainContainer', {fullscreen: true});
     
 }

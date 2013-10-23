@@ -34,12 +34,20 @@ Ext.define('OneClick.view.CampaignListContainer', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
+                itemId: 'headerBar',
                 title: 'Home',
                 layout: {
+                    align: 'center',
                     pack: 'end',
                     type: 'hbox'
                 },
                 items: [
+                    {
+                        xtype: 'image',
+                        docked: 'left',
+                        itemId: 'avatar',
+                        width: 50
+                    },
                     {
                         xtype: 'button',
                         itemId: 'btnNavigation',
@@ -49,9 +57,28 @@ Ext.define('OneClick.view.CampaignListContainer', {
                 ]
             },
             {
-                xtype: 'label',
-                html: 'Recent Campaigns',
-                margin: 10
+                xtype: 'container',
+                height: 30,
+                itemId: 'pageContainer',
+                margin: '0.3em 0',
+                width: '100%',
+                items: [
+                    {
+                        xtype: 'label',
+                        docked: 'left',
+                        itemId: 'pageTitle',
+                        margin: '0 0 0 0.3em',
+                        style: 'line-height:30px'
+                    },
+                    {
+                        xtype: 'image',
+                        docked: 'right',
+                        height: 30,
+                        itemId: 'pageAvatar',
+                        margin: '0 0.3em 0 0',
+                        width: 30
+                    }
+                ]
             },
             {
                 xtype: 'activecampaignlist',

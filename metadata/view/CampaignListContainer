@@ -23,12 +23,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "container|align": "center",
                 "container|pack": "end",
                 "docked": "top",
+                "itemId": "headerBar",
                 "title": "Home"
             },
             "designerId": "e383e5e6-b613-49cb-9394-ca5b1e624568",
             "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "left",
+                        "height": null,
+                        "itemId": "avatar",
+                        "width": 50
+                    },
+                    "designerId": "2514dcbd-7dfa-43d1-8275-4c852ec24a42"
+                },
                 {
                     "type": "Ext.Button",
                     "reference": {
@@ -47,17 +64,53 @@
             ]
         },
         {
-            "type": "Ext.Label",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "html": "Recent Campaigns",
-                "margin": 10
+                "height": 30,
+                "itemId": "pageContainer",
+                "margin": "0.3em 0",
+                "width": "100%"
             },
-            "designerId": "f6fdb5b9-d2fd-4333-929f-32398560e5c1"
+            "designerId": "91d04a48-214d-4501-a5fe-e17dbe0d9a7e",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "left",
+                        "html": null,
+                        "itemId": "pageTitle",
+                        "margin": "0 0 0 0.3em",
+                        "style": "line-height:30px"
+                    },
+                    "designerId": "f6fdb5b9-d2fd-4333-929f-32398560e5c1"
+                },
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "right",
+                        "height": 30,
+                        "itemId": "pageAvatar",
+                        "margin": "0 0.3em 0 0",
+                        "width": 30
+                    },
+                    "designerId": "f1b1d500-f1c3-4480-b933-543dd6b0971d"
+                }
+            ]
         },
         {
             "type": "linkedinstance",
